@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>아이돌 취향표 만들기</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+  <!-- 가장 호환성이 뛰어난 html2canvas 라이브러리 사용 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <style>
     body {
@@ -228,6 +229,24 @@
     </button>
   </footer>
 
+  <!-- 모바일 저장 지원용 팝업 모달 -->
+  <div id="previewModal" class="fixed inset-0 bg-black/80 z-50 hidden flex flex-col items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-5 max-w-xs w-full flex flex-col items-center shadow-2xl">
+      <h3 class="text-base font-bold text-gray-800 mb-1">취향표 완성!</h3>
+      <p class="text-xs text-purple-600 mb-3 text-center">아래 이미지를 <b>길게 눌러서 '사진 저장'</b>을 해주세요!</p>
+      <div class="w-full rounded-2xl overflow-hidden border border-purple-100 mb-4 bg-purple-50">
+        <img id="previewModalImg" class="w-full h-auto object-contain" alt="완성본">
+      </div>
+      <button 
+        type="button" 
+        id="closeModalBtn" 
+        class="w-full py-2.5 bg-purple-600 active:bg-purple-700 text-white font-bold rounded-xl text-sm"
+      >
+        닫기
+      </button>
+    </div>
+  </div>
+
   <script>
     const idolNameInput = document.getElementById('idolNameInput');
     const chartTitle = document.getElementById('chartTitle');
@@ -236,6 +255,9 @@
     const btnText = document.getElementById('btnText');
     const resetAllBtn = document.getElementById('resetAllBtn');
     const slotContainers = document.querySelectorAll('.slot-container');
+    const previewModal = document.getElementById('previewModal');
+    const previewModalImg = document.getElementById('previewModalImg');
+    const closeModalBtn = document.getElementById('closeModalBtn');
 
     // 실시간 제목 반영
     idolNameInput.addEventListener('input', (e) => {
@@ -307,33 +329,46 @@
       }
     });
 
-    // 고해상도 이미지 다운로드
+    // 모달 닫기
+    closeModalBtn.addEventListener('click', () => {
+      previewModal.classList.add('hidden');
+    });
+
+    // 이미지 저장 (html2canvas 기반)
     downloadBtn.addEventListener('click', async () => {
       const chart = document.getElementById('tasteChart');
       const deleteBtns = chart.querySelectorAll('.delete-btn');
       
       deleteBtns.forEach(btn => btn.style.display = 'none');
       downloadBtn.disabled = true;
-      btnText.textContent = '저장 중...';
+      btnText.textContent = '저장 준비 중...';
 
       try {
-        const dataUrl = await htmlToImage.toPng(chart, {
-          quality: 0.95,
-          pixelRatio: 2.0,
+        const canvas = await html2canvas(chart, {
+          scale: 2.5,
+          useCORS: true,
           backgroundColor: '#f7f6fd',
-          skipFonts: true
+          logging: false
         });
 
+        const dataUrl = canvas.toDataURL('image/png');
         const currentName = idolNameInput.value.trim() || '최애';
+
+        // 1. 브라우저 자동 다운로드 시도
         const link = document.createElement('a');
         link.download = `${currentName}_취향표.png`;
         link.href = dataUrl;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+
+        // 2. 모바일 브라우저(다운로드 팝업 차단되는 환경)를 위해 완성본 팝업도 함께 노출
+        previewModalImg.src = dataUrl;
+        previewModal.classList.remove('hidden');
+
       } catch (err) {
         console.error(err);
-        alert('이미지 저장 중 오류가 발생했습니다. 브라우저 설정을 확인해주세요.');
+        alert('이미지 생성 중 오류가 발생했습니다. 다시 시도해주세요.');
       } finally {
         deleteBtns.forEach(btn => btn.style.display = '');
         downloadBtn.disabled = false;

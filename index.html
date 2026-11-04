@@ -5,36 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>아이돌 취향표 만들기</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Noto Sans KR"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            gmarket: ['"GmarketSansBold"', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
-    @font-face {
-      font-family: 'GmarketSansBold';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-      font-weight: 700;
-      font-style: normal;
-    }
     body {
       background-color: #f7f6fd;
       color: #333333;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
   </style>
@@ -43,7 +20,7 @@
 
   <!-- 헤더 영역 -->
   <header class="w-full max-w-sm mb-5 text-center">
-    <h1 class="text-xl font-bold text-purple-950 font-gmarket tracking-tight">아이돌 취향표 제작기</h1>
+    <h1 class="text-xl font-extrabold text-purple-950 tracking-tight">아이돌 취향표 제작기</h1>
     <p class="text-xs text-purple-600 mt-1">이름을 입력하고 사진을 넣어 나만의 취향표를 완성해보세요!</p>
   </header>
 
@@ -63,7 +40,9 @@
         id="clearNameBtn" 
         class="absolute right-3 top-1/2 -translate-y-1/2 text-purple-400 hover:text-purple-600 hidden text-xs p-1"
       >
-        <i class="fa-solid fa-circle-xmark"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
       </button>
     </div>
   </section>
@@ -72,13 +51,13 @@
   <div class="w-full max-w-sm flex justify-center mb-6">
     <div 
       id="tasteChart" 
-      class="w-[360px] bg-gradient-to-b from-[#f3f0ff] via-[#f7f5ff] to-[#f0ebff] p-5 rounded-[32px] border-[3px] border-[#e2d9fc] shadow-md relative select-none"
+      class="w-[360px] bg-[#f5f2ff] p-5 rounded-[32px] border-[3px] border-[#ded4fb] shadow-sm relative select-none"
     >
       <!-- 취향표 타이틀 -->
       <div class="text-center pt-3 pb-5">
         <h2 
           id="chartTitle" 
-          class="text-[28px] font-gmarket text-[#7c3aed] tracking-tight drop-shadow-sm transition-all"
+          class="text-[28px] font-black text-[#7c3aed] tracking-tight transition-all"
         >
           최애 취향표
         </h2>
@@ -88,45 +67,57 @@
       <div class="grid grid-cols-3 gap-3 mb-5">
         <!-- 첫인상 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">첫인상</span>
-          <label class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">첫인상</span>
+          <label class="slot-container relative w-full aspect-square bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
 
         <!-- 현인상 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">현인상</span>
-          <label class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">현인상</span>
+          <label class="slot-container relative w-full aspect-square bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
 
         <!-- 모에화 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">모에화</span>
-          <label class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">모에화</span>
+          <label class="slot-container relative w-full aspect-square bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
@@ -136,30 +127,38 @@
       <div class="grid grid-cols-2 gap-3 mb-5">
         <!-- 최애 직캠 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 직캠</span>
-          <label class="slot-container relative w-full aspect-[4/3] bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">최애 직캠</span>
+          <label class="slot-container relative w-full aspect-[4/3] bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
 
         <!-- 최애 조합 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 조합</span>
-          <label class="slot-container relative w-full aspect-[4/3] bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">최애 조합</span>
+          <label class="slot-container relative w-full aspect-[4/3] bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
@@ -169,30 +168,38 @@
       <div class="grid grid-cols-2 gap-3 pb-3">
         <!-- 최애 셀카 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 셀카</span>
-          <label class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">최애 셀카</span>
+          <label class="slot-container relative w-full aspect-square bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
 
         <!-- 최애 무대 -->
         <div class="flex flex-col items-center">
-          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 무대</span>
-          <label class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition flex items-center justify-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">최애 무대</span>
+          <label class="slot-container relative w-full aspect-square bg-[#ede7fe] border-2 border-[#dcd0fc] rounded-2xl overflow-hidden cursor-pointer flex items-center justify-center">
             <input type="file" accept="image/*" class="slot-file-input sr-only">
-            <div class="empty-state text-purple-300 pointer-events-none">
-              <i class="fa-solid fa-plus text-base"></i>
+            <div class="empty-state text-[#a78bfa] pointer-events-none flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
             </div>
             <img class="slot-img w-full h-full object-cover hidden pointer-events-none" alt="">
-            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/55 text-white rounded-full text-xs hidden flex items-center justify-center z-20 hover:bg-black/75">
-              <i class="fa-solid fa-xmark"></i>
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/60 text-white rounded-full hidden flex items-center justify-center z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </label>
         </div>
@@ -205,17 +212,18 @@
     <button 
       type="button" 
       id="downloadBtn" 
-      class="w-full py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] active:scale-[0.98] text-white font-bold rounded-2xl shadow-md shadow-purple-200 flex items-center justify-center gap-2 transition duration-150 text-base"
+      class="w-full py-3.5 bg-[#7c3aed] active:bg-[#6d28d9] text-white font-bold rounded-2xl shadow-md shadow-purple-200 flex items-center justify-center gap-2 transition duration-150 text-base"
     >
-      <i class="fa-solid fa-download"></i>
-      <span>완성본 이미지 저장하기</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+      <span id="btnText">완성본 이미지 저장하기</span>
     </button>
     <button 
       type="button" 
       id="resetAllBtn" 
-      class="w-full py-2.5 bg-white hover:bg-gray-50 active:scale-[0.98] text-gray-500 font-medium rounded-xl border border-gray-200 text-xs flex items-center justify-center gap-1.5 transition"
+      class="w-full py-2.5 bg-white text-gray-500 font-medium rounded-xl border border-gray-200 text-xs flex items-center justify-center gap-1.5 transition active:bg-gray-100"
     >
-      <i class="fa-solid fa-rotate-left"></i>
       <span>사진 모두 비우기</span>
     </button>
   </footer>
@@ -225,6 +233,7 @@
     const chartTitle = document.getElementById('chartTitle');
     const clearNameBtn = document.getElementById('clearNameBtn');
     const downloadBtn = document.getElementById('downloadBtn');
+    const btnText = document.getElementById('btnText');
     const resetAllBtn = document.getElementById('resetAllBtn');
     const slotContainers = document.querySelectorAll('.slot-container');
 
@@ -304,28 +313,31 @@
       const deleteBtns = chart.querySelectorAll('.delete-btn');
       
       deleteBtns.forEach(btn => btn.style.display = 'none');
-      const originalText = downloadBtn.innerHTML;
       downloadBtn.disabled = true;
-      downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 저장 중...';
+      btnText.textContent = '저장 중...';
 
       try {
         const dataUrl = await htmlToImage.toPng(chart, {
-          quality: 1.0,
-          pixelRatio: 2.5,
-          backgroundColor: '#f7f6fd'
+          quality: 0.95,
+          pixelRatio: 2.0,
+          backgroundColor: '#f7f6fd',
+          skipFonts: true
         });
 
         const currentName = idolNameInput.value.trim() || '최애';
         const link = document.createElement('a');
         link.download = `${currentName}_취향표.png`;
         link.href = dataUrl;
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
       } catch (err) {
-        alert('이미지 생성에 실패했습니다. 다시 시도해주세요.');
+        console.error(err);
+        alert('이미지 저장 중 오류가 발생했습니다. 브라우저 설정을 확인해주세요.');
       } finally {
         deleteBtns.forEach(btn => btn.style.display = '');
         downloadBtn.disabled = false;
-        downloadBtn.innerHTML = originalText;
+        btnText.textContent = '완성본 이미지 저장하기';
       }
     });
   </script>

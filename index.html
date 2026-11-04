@@ -1,438 +1,325 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0f7001; -webkit-text-stroke: #0f7001}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #900112; -webkit-text-stroke: #900112}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #137646; -webkit-text-stroke: #137646}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
-    span.s1 {font-kerning: none; background-color: #fffffe}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #fffffe; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #fffffe; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #fffffe; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #fffffe; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #fffffe; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #fffffe; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #137646; background-color: #fffffe; -webkit-text-stroke: 0px #137646}
-    span.s10 {font-kerning: none; color: #900112; background-color: #fffffe; -webkit-text-stroke: 0px #900112}
-    span.s11 {font-kerning: none; color: #0e6e6d; background-color: #fffffe; -webkit-text-stroke: 0px #0e6e6d}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>아이돌 취향표 만들기</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans KR"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            gmarket: ['"GmarketSansBold"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'GmarketSansBold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    body {
+      background-color: #f7f6fd;
+      color: #333333;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
   </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"ko"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">아이돌 취향표 만들기 (Idol Taste Chart Maker)</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Tailwind CSS CDN --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- FontAwesome Icons --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- html-to-image &amp; downloadjs for crisp image export --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Google Fonts: Inter &amp; Noto Sans KR --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;800;900&amp;display=swap"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Gmarket Sans Web Font --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>tailwind.config = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>theme: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>extend: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>fontFamily: {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span>sans: [</span><span class="s1">'"Noto Sans KR"'</span><span class="s4">, </span><span class="s1">'-apple-system'</span><span class="s4">, </span><span class="s1">'BlinkMacSystemFont'</span><span class="s4">, </span><span class="s1">'system-ui'</span><span class="s4">, </span><span class="s1">'Roboto'</span><span class="s4">, </span><span class="s1">'sans-serif'</span><span class="s4">],</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span>gmarket: [</span><span class="s1">'"GmarketSansBold"'</span><span class="s4">, </span><span class="s1">'sans-serif'</span><span class="s4">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">@font-face</span><span class="s4"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'GmarketSansBold'</span><span class="s4">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s2">src:</span><span class="s4"> </span><span class="s8">url</span><span class="s4">(</span><span class="s1">'https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff'</span><span class="s4">) </span><span class="s8">format(</span><span class="s1">'woff'</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s9">700</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">font-style:</span><span class="s4"> </span><span class="s8">normal</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6">body</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background:</span><span class="s4"> </span><span class="s8">#f8f6fc</span><span class="s4">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Noto Sans KR'</span><span class="s4">, </span><span class="s8">sans-serif</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">-webkit-tap-highlight-color:</span><span class="s4"> </span><span class="s8">transparent</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">user-select:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.font-gmarket</span><span class="s4"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'GmarketSansBold'</span><span class="s4">, </span><span class="s1">'Noto Sans KR'</span><span class="s4">, </span><span class="s8">sans-serif</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">letter-spacing:</span><span class="s4"> </span><span class="s9">-0.02em</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">/* 보라빛 부드러운 그림자 */</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.card-shadow</span><span class="s4"> {</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s2">box-shadow:</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">16px</span><span class="s4"> </span><span class="s1">36px</span><span class="s4"> </span><span class="s1">-10px</span><span class="s4"> </span><span class="s8">rgba(</span><span class="s1">139</span><span class="s4">, </span><span class="s1">92</span><span class="s4">, </span><span class="s1">246</span><span class="s4">, </span><span class="s1">0.22</span><span class="s8">)</span><span class="s4">, </span><span class="s1">0</span><span class="s4"> </span><span class="s1">4px</span><span class="s4"> </span><span class="s1">14px</span><span class="s4"> </span><span class="s1">-4px</span><span class="s4"> </span><span class="s8">rgba(</span><span class="s1">0</span><span class="s4">, </span><span class="s1">0</span><span class="s4">, </span><span class="s1">0</span><span class="s4">, </span><span class="s1">0.04</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">/* 터치 친화적 슬롯 박스 */</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.slot-box</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s4"> </span><span class="s8">relative</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#faf8fc</span><span class="s4">;</span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s1">transform</span><span class="s4"> </span><span class="s9">0.15s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">, </span><span class="s1">background-color</span><span class="s4"> </span><span class="s9">0.15s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">, </span><span class="s1">border-color</span><span class="s4"> </span><span class="s9">0.15s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s2">cursor:</span><span class="s1"> </span><span class="s8">pointer</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">overflow:</span><span class="s4"> </span><span class="s8">hidden</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">-webkit-user-select:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">user-select:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">align-items:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.slot-box:active</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">transform:</span><span class="s4"> </span><span class="s8">scale(</span><span class="s9">0.97</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.slot-box:hover</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#f5f0fc</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">border-color:</span><span class="s4"> </span><span class="s8">#d8b4fe</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">.slot-box</span><span class="s4"> </span><span class="s1">img</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">position:</span><span class="s4"> </span><span class="s8">absolute</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s2">inset:</span><span class="s1"> </span><span class="s9">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s9">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">100%</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">object-fit:</span><span class="s4"> </span><span class="s8">cover</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">block</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">pointer-events:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"min-h-screen text-slate-800 antialiased pb-12"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 모바일 최적화 상단 헤더 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">header</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white/90 backdrop-blur-md border-b border-purple-100 sticky top-0 z-30 px-4 py-3"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-md mx-auto flex items-center justify-between"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center space-x-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl"</span><span class="s3">&gt;</span><span class="s1">💜</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-base font-bold text-purple-900 tracking-tight"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>최애 취향표 만들기</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"btn-reset"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"px-2.5 py-1 text-xs font-semibold text-slate-500 hover:text-purple-600 bg-purple-50 active:scale-95 rounded-lg transition-all flex items-center gap-1"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-rotate-right text-[11px]"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">비우기</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">header</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 메인 모바일 컨테이너 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">main</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-md mx-auto p-4 sm:p-5 flex flex-col items-center gap-4"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 최애 / 아이돌 이름 입력창 단독 구성 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full bg-white p-3.5 rounded-2xl border border-purple-100 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">label</span><span class="s4"> </span><span class="s2">for</span><span class="s3">=</span><span class="s1">"idol-name"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block text-xs font-bold text-purple-700 mb-1.5 flex items-center gap-1.5"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-heart text-purple-500 text-[10px]"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span><span class="s4"> 최애 / 아이돌 이름</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">label</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s2">type</span><span class="s3">=</span><span class="s5">"text"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s2">id</span><span class="s3">=</span><span class="s5">"idol-name"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s2">value</span><span class="s3">=</span><span class="s5">""</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"아이돌 이름을 입력하세요"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full pl-3 pr-10 py-2.5 rounded-xl bg-purple-50/50 border border-purple-200 focus:bg-white focus:ring-2 focus:ring-purple-400 focus:border-purple-400 text-sm font-semibold text-slate-800 outline-none transition"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s2">maxlength</span><span class="s3">=</span><span class="s5">"12"</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute right-3 top-3 text-[11px] text-purple-400 font-medium"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"name-len"</span><span class="s3">&gt;</span><span class="s4">0/12</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-[11px] text-slate-400 mt-1.5 pl-0.5"</span><span class="s3">&gt;</span><span class="s4">칸을 터치해서 사진을 넣고 아래 [저장하기]를 누르세요.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 캡처 대상 취향표 (보라색 테마 고정 &amp; 원본 비율 완벽 구현) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"chart-capture-target"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full bg-[#f4effc] p-3.5 sm:p-5 rounded-[30px] card-shadow"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">&lt;!-- 내부 화이트 보드 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white w-full rounded-[24px] px-4 py-6 sm:px-6 sm:py-7 shadow-sm border border-purple-100/60"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 상단 타이틀 (지마켓 산스 볼드 적용) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"chart-display-title"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"font-gmarket text-2xl sm:text-3xl text-purple-600"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>최애 취향표</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 슬롯 그리드 (정렬 및 플레이스홀더 깔끔화) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"space-y-5"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 1행: 첫인상, 현인상, 모에화 (정사각형 3개) --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-3 gap-2.5 sm:gap-3 mb-1.5 text-center text-[12px] sm:text-[13px] font-bold text-slate-600"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">첫인상</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">현인상</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">모에화</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-3 gap-2.5 sm:gap-3"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 0 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-box aspect-square rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 1 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-box aspect-square rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"1"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-1"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 2 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-box aspect-square rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 2행: 최애 직캠, 최애 조합 (가로 직사각형 2개) --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 gap-2.5 sm:gap-3 mb-1.5 text-center text-[12px] sm:text-[13px] font-bold text-slate-600"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">최애 직캠</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">최애 조합</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 gap-2.5 sm:gap-3"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 3 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-box aspect-[16/10] rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"3"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-3"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 4 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-box aspect-[16/10] rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s1">&lt;!-- 3행: 최애 셀카, 최애 무대 (셀카 정사각 + 무대 가로형) --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-12 gap-2.5 sm:gap-3 mb-1.5 text-center text-[12px] sm:text-[13px] font-bold text-slate-600"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"col-span-5"</span><span class="s3">&gt;</span><span class="s1">최애 셀카</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"col-span-7"</span><span class="s3">&gt;</span><span class="s1">최애 무대</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-12 gap-2.5 sm:gap-3"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 5 (셀카) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"col-span-5 slot-box aspect-square rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"5"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-5"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s1">&lt;!-- slot 6 (무대) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"col-span-7 slot-box aspect-[14/10] rounded-[18px] border-2 border-purple-200/90 text-purple-300"</span><span class="s4"> </span><span class="s2">data-index</span><span class="s3">=</span><span class="s1">"6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s4"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">"image/*"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden file-input"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"input-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"slot-placeholder flex items-center justify-center pointer-events-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                  </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-plus text-lg text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"btn-remove-slot hidden absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] flex items-center justify-center active:scale-90"</span><span class="s3">&gt;</span><span class="s4">✕</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 하단 완성본 저장 버튼 (크고 누르기 편한 모바일 UI) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full mt-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"btn-download"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full py-4 px-6 text-base font-bold text-white bg-purple-600 hover:bg-purple-700 active:scale-[0.98] rounded-2xl shadow-lg shadow-purple-500/30 transition flex items-center justify-center gap-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-down text-lg"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">완성본 사진으로 저장하기</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">main</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 저장 상태 알림 토스트 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"status-toast"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur text-white px-4 py-2.5 rounded-full text-xs font-semibold shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-circle-check text-purple-400"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"toast-message"</span><span class="s3">&gt;</span><span class="s4">완료되었습니다!</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// 상태 관리</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">let</span><span class="s1"> idolName = </span><span class="s10">''</span><span class="s1">;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// DOM 요소</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> idolNameInput = document.getElementById(</span><span class="s10">'idol-name'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> nameLenDisplay = document.getElementById(</span><span class="s10">'name-len'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> displayTitle = document.getElementById(</span><span class="s10">'chart-display-title'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> captureTarget = document.getElementById(</span><span class="s10">'chart-capture-target'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> slotBoxes = document.querySelectorAll(</span><span class="s10">'.slot-box'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> btnDownload = document.getElementById(</span><span class="s10">'btn-download'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> btnReset = document.getElementById(</span><span class="s10">'btn-reset'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> toast = document.getElementById(</span><span class="s10">'status-toast'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">const</span><span class="s1"> toastMsg = document.getElementById(</span><span class="s10">'toast-message'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// 토스트 알림 함수</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">function</span><span class="s1"> showToast(message, isError = </span><span class="s5">false</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>toastMsg.textContent = message;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> icon = toast.querySelector(</span><span class="s10">'i'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">if</span><span class="s1"> (isError) {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>icon.className = </span><span class="s1">'fa-solid fa-circle-exclamation text-rose-400'</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} </span><span class="s5">else</span><span class="s1"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>icon.className = </span><span class="s1">'fa-solid fa-circle-check text-purple-400'</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">      </span>toast.classList.remove(</span><span class="s1">'opacity-0'</span><span class="s4">, </span><span class="s1">'pointer-events-none'</span><span class="s4">, </span><span class="s1">'translate-y-2'</span><span class="s4">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>toast.classList.add(</span><span class="s10">'opacity-100'</span><span class="s1">, </span><span class="s10">'translate-y-0'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>toast.classList.add(</span><span class="s1">'opacity-0'</span><span class="s4">, </span><span class="s1">'pointer-events-none'</span><span class="s4">, </span><span class="s1">'translate-y-2'</span><span class="s4">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>toast.classList.remove(</span><span class="s10">'opacity-100'</span><span class="s1">, </span><span class="s10">'translate-y-0'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}, </span><span class="s9">2200</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// 이름 입력 시 실시간 타이틀 갱신 ({이름} 취향표 로 고정)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">function</span><span class="s1"> updateTitle() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> name = idolNameInput.value.trim();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>idolName = name;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>displayTitle.textContent = </span><span class="s10">`</span><span class="s1">${name || </span><span class="s10">'최애'</span><span class="s1">}</span><span class="s10"> 취향표`</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>nameLenDisplay.textContent = </span><span class="s10">`</span><span class="s1">${idolNameInput.value.length}</span><span class="s10">/12`</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>idolNameInput.addEventListener(</span><span class="s10">'input'</span><span class="s1">, updateTitle);</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// 각 슬롯 이미지 업로드 및 동적 렌더링</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>slotBoxes.forEach(slot =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> fileInput = slot.querySelector(</span><span class="s10">'.file-input'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> placeholder = slot.querySelector(</span><span class="s10">'.slot-placeholder'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> btnRemove = slot.querySelector(</span><span class="s10">'.btn-remove-slot'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">// 박스 탭 시 파일 선택기 실행</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>slot.addEventListener(</span><span class="s10">'click'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">if</span><span class="s1"> (e.target.closest(</span><span class="s10">'.btn-remove-slot'</span><span class="s1">)) </span><span class="s5">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>fileInput.click();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">// 파일 선택 시 이미지 생성 및 장착</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>fileInput.addEventListener(</span><span class="s10">'change'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> file = e.target.files[</span><span class="s9">0</span><span class="s1">];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">if</span><span class="s1"> (!file) </span><span class="s5">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">if</span><span class="s1"> (!file.type.startsWith(</span><span class="s10">'image/'</span><span class="s1">)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>showToast(</span><span class="s10">'이미지 파일만 첨부할 수 있습니다.'</span><span class="s1">, </span><span class="s5">true</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s5">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> reader = </span><span class="s5">new</span><span class="s1"> </span><span class="s11">FileReader</span><span class="s1">();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>reader.onload = (event) =&gt; {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">          </span></span><span class="s1">// 기존 이미지가 있다면 제거</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s5">let</span><span class="s1"> existingImg = slot.querySelector(</span><span class="s10">'img'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s5">if</span><span class="s1"> (!existingImg) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>existingImg = document.createElement(</span><span class="s10">'img'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>slot.insertBefore(existingImg, btnRemove);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>existingImg.src = event.target.result;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>existingImg.alt = </span><span class="s10">"업로드 이미지"</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>placeholder.classList.add(</span><span class="s10">'hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>btnRemove.classList.remove(</span><span class="s10">'hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>reader.readAsDataURL(file);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">// 개별 삭제 버튼</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>btnRemove.addEventListener(</span><span class="s10">'click'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>e.stopPropagation();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>fileInput.value = </span><span class="s10">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> img = slot.querySelector(</span><span class="s10">'img'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">if</span><span class="s1"> (img) img.remove();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>placeholder.classList.remove(</span><span class="s10">'hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>btnRemove.classList.add(</span><span class="s10">'hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// 전체 비우기 버튼</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>btnReset.addEventListener(</span><span class="s10">'click'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>slotBoxes.forEach(slot =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> fileInput = slot.querySelector(</span><span class="s10">'.file-input'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> img = slot.querySelector(</span><span class="s10">'img'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">if</span><span class="s1"> (img) img.remove();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>fileInput.value = </span><span class="s10">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> placeholder = slot.querySelector(</span><span class="s10">'.slot-placeholder'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> btnRemove = slot.querySelector(</span><span class="s10">'.btn-remove-slot'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>placeholder.classList.remove(</span><span class="s10">'hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>btnRemove.classList.add(</span><span class="s10">'hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>showToast(</span><span class="s10">'사진이 모두 비워졌습니다.'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">// 고해상도 PNG 저장 처리</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s5">async</span><span class="s1"> </span><span class="s5">function</span><span class="s1"> downloadChartImage() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> originalText = btnDownload.innerHTML;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>btnDownload.disabled = </span><span class="s5">true</span><span class="s1">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">      </span>btnDownload.innerHTML = </span><span class="s1">`&lt;i class="fa-solid fa-spinner fa-spin text-lg"&gt;&lt;/i&gt; &lt;span&gt;이미지 생성 중...&lt;/span&gt;`</span><span class="s4">;</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s1">// 캡처 전 우측 상단 X 버튼 일시 숨김</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">const</span><span class="s1"> removeButtons = document.querySelectorAll(</span><span class="s10">'.btn-remove-slot'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>removeButtons.forEach(btn =&gt; btn.style.display = </span><span class="s10">'none'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5">try</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> dataUrl = </span><span class="s5">await</span><span class="s1"> htmlToImage.toPng(captureTarget, {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>quality: </span><span class="s9">1.0</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>pixelRatio: </span><span class="s9">2.5</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>cacheBust: </span><span class="s5">true</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>style: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>transform: </span><span class="s10">'none'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>margin: </span><span class="s10">'0'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> safeName = (idolName || </span><span class="s10">'최애'</span><span class="s1">).replace(</span><span class="s6">/\s+/</span><span class="s5">g</span><span class="s1">, </span><span class="s10">'_'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s5">const</span><span class="s1"> link = document.createElement(</span><span class="s10">'a'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.download = </span><span class="s10">`</span><span class="s1">${safeName}</span><span class="s10">_취향표.png`</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.href = dataUrl;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.body.appendChild(link);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.click();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.body.removeChild(link);</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>showToast(</span><span class="s1">'취향표가 성공적으로 저장되었습니다! 💜'</span><span class="s4">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} </span><span class="s5">catch</span><span class="s1"> (err) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>console.error(</span><span class="s10">'저장 실패:'</span><span class="s1">, err);</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>showToast(</span><span class="s1">'저장 중 오류가 발생했습니다. 다시 시도해주세요.'</span><span class="s4">, </span><span class="s5">true</span><span class="s4">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} </span><span class="s5">finally</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>removeButtons.forEach(btn =&gt; btn.style.display = </span><span class="s10">''</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>btnDownload.disabled = </span><span class="s5">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>btnDownload.innerHTML = originalText;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p7"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>btnDownload.addEventListener(</span><span class="s10">'click'</span><span class="s1">, downloadChartImage);</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
-</body>
-</html>
+<body class="min-h-screen flex flex-col items-center py-6 px-4">
+
+  <!-- 헤더 영역 -->
+  <header class="w-full max-w-sm mb-5 text-center">
+    <h1 class="text-xl font-bold text-purple-950 font-gmarket tracking-tight">아이돌 취향표 제작기</h1>
+    <p class="text-xs text-purple-600 mt-1">이름을 입력하고 사진을 넣어 나만의 취향표를 완성해보세요!</p>
+  </header>
+
+  <!-- 이름 입력 카드 -->
+  <section class="w-full max-w-sm bg-white rounded-2xl p-4 shadow-sm border border-purple-100 mb-5">
+    <label class="block text-xs font-bold text-purple-900 mb-2">최애 / 아이돌 이름</label>
+    <div class="relative">
+      <input 
+        type="text" 
+        id="idolNameInput" 
+        placeholder="아이돌 이름을 입력하세요"
+        maxlength="15"
+        class="w-full px-4 py-2.5 bg-purple-50/60 border border-purple-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:bg-white transition font-medium"
+      >
+      <button 
+        type="button" 
+        id="clearNameBtn" 
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-purple-400 hover:text-purple-600 hidden text-xs p-1"
+      >
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- 취향표 캔버스 캡처 영역 -->
+  <div class="w-full max-w-sm flex justify-center mb-6">
+    <div 
+      id="tasteChart" 
+      class="w-[360px] bg-gradient-to-b from-[#f3f0ff] via-[#f7f5ff] to-[#f0ebff] p-5 rounded-[32px] border-[3px] border-[#e2d9fc] shadow-md relative select-none"
+    >
+      <!-- 취향표 타이틀 -->
+      <div class="text-center pt-3 pb-5">
+        <h2 
+          id="chartTitle" 
+          class="text-[28px] font-gmarket text-[#7c3aed] tracking-tight drop-shadow-sm transition-all"
+        >
+          최애 취향표
+        </h2>
+      </div>
+
+      <!-- 1행: 첫인상, 현인상, 모에화 (정사각형 3열) -->
+      <div class="grid grid-cols-3 gap-3 mb-5">
+        <!-- 첫인상 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">첫인상</span>
+          <div class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="0">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 현인상 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">현인상</span>
+          <div class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="1">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 모에화 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">모에화</span>
+          <div class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="2">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2행: 최애 직캠, 최애 조합 (가로 직사각형 2열) -->
+      <div class="grid grid-cols-2 gap-3 mb-5">
+        <!-- 최애 직캠 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 직캠</span>
+          <div class="slot-container relative w-full aspect-[4/3] bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="3">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 최애 조합 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 조합</span>
+          <div class="slot-container relative w-full aspect-[4/3] bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="4">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3행: 최애 셀카, 최애 무대 -->
+      <div class="grid grid-cols-2 gap-3 pb-3">
+        <!-- 최애 셀카 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 셀카</span>
+          <div class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="5">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 최애 무대 -->
+        <div class="flex flex-col items-center">
+          <span class="text-[13px] font-bold text-gray-700 mb-2 font-sans tracking-tight">최애 무대</span>
+          <div class="slot-container relative w-full aspect-square bg-purple-50/70 border-2 border-purple-200/80 rounded-2xl overflow-hidden cursor-pointer hover:border-purple-400 transition group flex flex-col items-center justify-center" data-slot="6">
+            <input type="file" accept="image/*" class="slot-file-input hidden">
+            <div class="empty-state flex flex-col items-center justify-center text-purple-300 group-hover:text-purple-500 transition">
+              <i class="fa-solid fa-plus text-base"></i>
+            </div>
+            <img class="slot-img w-full h-full object-cover hidden" alt="">
+            <button type="button" class="delete-btn absolute top-1.5 right-1.5 w-6 h-6 bg-black/50 text-white rounded-full text-xs hidden flex items-center justify-center z-10 hover:bg-black/70">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 저장 버튼 영역 -->
+  <footer class="w-full max-w-sm flex flex-col gap-2.5 pb-8">
+    <button 
+      type="button" 
+      id="downloadBtn" 
+      class="w-full py-3.5 bg-[#7c3aed] hover:bg-[#6d28d9] active:scale-[0.98] text-white font-bold rounded-2xl shadow-md shadow-purple-200 flex items-center justify-center gap-2 transition duration-150 text-base"
+    >
+      <i class="fa-solid fa-download"></i>
+      <span>완성본 이미지 저장하기</span>
+    </button>
+    <button 
+      type="button" 
+      id="resetAllBtn" 
+      class="w-full py-2.5 bg-white hover:bg-gray-50 active:scale-[0.98] text-gray-500 font-medium rounded-xl border border-gray-200 text-xs flex items-center justify-center gap-1.5 transition"
+    >
+      <i class="fa-solid fa-rotate-left"></i>
+      <span>사진 모두 비우기</span>
+    </button>
+  </footer>
+
+  <script>
+    const idolNameInput = document.getElementById('idolNameInput');
+    const chartTitle = document.getElementById('chartTitle');
+    const clearNameBtn = document.getElementById('clearNameBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const resetAllBtn = document.getElementById('resetAllBtn');
+    const slotContainers = document.querySelectorAll('.slot-container');
+
+    // 실시간 제목 반영
+    idolNameInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      if (val) {
+        chartTitle.textContent = `${val} 취향표`;
+        clearNameBtn.classList.remove('hidden');
+      } else {
+        chartTitle.textContent = '최애 취향표';
+        clearNameBtn.classList.add('hidden');
+      }
+    });
+
+    clearNameBtn.addEventListener('click', () => {
+      idolNameInput.value = '';
+      chartTitle.textContent = '최애 취향표';
+      clearNameBtn.classList.add('hidden');
+      idolNameInput.focus();
+    });
+
+    // 슬롯 사진 업로드 및 삭제
+    slotContainers.forEach((container) => {
+      const fileInput = container.querySelector('.slot-file-input');
+      const img = container.querySelector('.slot-img');
+      const emptyState = container.querySelector('.empty-state');
+      const deleteBtn = container.querySelector('.delete-btn');
+
+      container.addEventListener('click', (e) => {
+        if (e.target.closest('.delete-btn')) return;
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            img.src = event.target.result;
+            img.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+            deleteBtn.classList.remove('hidden');
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fileInput.value = '';
+        img.src = '';
+        img.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        deleteBtn.classList.add('hidden');
+      });
+    });
+
+    // 사진 모두 비우기
+    resetAllBtn.addEventListener('click', () => {
+      if (confirm('등록한 사진을 모두 지우시겠습니까?')) {
+        slotContainers.forEach((container) => {
+          const fileInput = container.querySelector('.slot-file-input');
+          const img = container.querySelector('.slot-img');
+          const emptyState = container.querySelector('.empty-state');
+          const deleteBtn = container.querySelector('.delete-btn');
+
+          fileInput.value = '';
+          img.src = '';
+          img.classList.add('hidden');
+          emptyState.classList.remove('hidden');
+          deleteBtn.classList.add('hidden');
+        });
+      }
+    });
+
+    // 고해상도 이미지 다운로드
+    downloadBtn.addEventListener('click', async () => {
+      const chart = document.getElementById('tasteChart');
+      const deleteBtns = chart.querySelectorAll('.delete-btn');
+      
+      deleteBtns.forEach(btn => btn.style.display = 'none');
+      
+      const originalText = downloadBtn.innerHTML;
+      downloadBtn.disabled = true;
+      downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 저장 중...';
+
+      try {
+        const dataUrl = await htmlToImage.toPng(chart, {
+          quality: 1.0,
+          pixelRatio: 2.5,
+          backgroundColor: '#f7f6fd'
+        });
+
+        const currentName = idolNameInput.

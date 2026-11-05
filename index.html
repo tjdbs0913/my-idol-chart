@@ -19,13 +19,13 @@
 <body class="min-h-screen flex flex-col items-center py-6 px-4">
 
   <!-- 헤더 영역 -->
-  <header class="w-full max-w-sm mb-5 text-center">
+  <header class="w-full max-w-sm mb-4 text-center">
     <h1 class="text-xl font-extrabold text-purple-950 tracking-tight">아이돌 취향표 제작기</h1>
     <p class="text-xs text-purple-600 mt-1">이름을 입력하고 사진을 넣어 나만의 취향표를 완성해보세요!</p>
   </header>
 
   <!-- 이름 입력 카드 -->
-  <section class="w-full max-w-sm bg-white rounded-2xl p-4 shadow-sm border border-purple-100 mb-5">
+  <section class="w-full max-w-sm bg-white rounded-2xl p-4 shadow-sm border border-purple-100 mb-4">
     <label class="block text-xs font-bold text-purple-900 mb-2">최애 / 아이돌 이름</label>
     <div class="relative">
       <input 
@@ -47,14 +47,14 @@
     </div>
   </section>
 
-  <!-- 취향표 영역 -->
-  <div class="w-full max-w-sm flex justify-center mb-6">
+  <!-- 캡처 대상: 취향표 본체 (둥근 바깥 테두리 제거 및 꽉 차는 배경) -->
+  <div class="w-full max-w-sm flex justify-center mb-5">
     <div 
       id="tasteChart" 
-      class="w-[360px] bg-[#f5f2ff] p-5 rounded-[32px] border-[3px] border-[#ded4fb] shadow-sm relative select-none"
+      class="w-[360px] bg-[#f5f2ff] p-5 shadow-sm relative select-none"
     >
       <!-- 취향표 타이틀 -->
-      <div class="text-center pt-3 pb-5">
+      <div class="text-center pt-2 pb-5">
         <h2 
           id="chartTitle" 
           class="text-[28px] font-black text-[#7c3aed] tracking-tight transition-all"
@@ -165,7 +165,7 @@
       </div>
 
       <!-- 3행: 최애 셀카, 최애 무대 -->
-      <div class="grid grid-cols-2 gap-3 pb-3">
+      <div class="grid grid-cols-2 gap-3 pb-2">
         <!-- 최애 셀카 -->
         <div class="flex flex-col items-center">
           <span class="text-[13px] font-bold text-gray-700 mb-2 tracking-tight">최애 셀카</span>
@@ -277,7 +277,7 @@
         }
       });
 
-      // 사진 삭제 버튼
+      // 개별 삭제 버튼
       deleteBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -307,20 +307,24 @@
       }
     });
 
-    // 바로 파일/사진첩 다운로드
+    // 저장 실행: 빈칸 + 아이콘 및 삭제 버튼 가리고 꽉 찬 이미지로 캡처
     downloadBtn.addEventListener('click', async () => {
       const chart = document.getElementById('tasteChart');
       const deleteBtns = chart.querySelectorAll('.delete-btn');
-      
+      const emptyStates = chart.querySelectorAll('.empty-state');
+
+      // 저장 전 임시 숨김 처리 (삭제 버튼 & 빈 슬롯의 + 아이콘)
       deleteBtns.forEach(btn => btn.style.display = 'none');
+      emptyStates.forEach(el => el.style.visibility = 'hidden');
+
       downloadBtn.disabled = true;
       btnText.textContent = '저장 중...';
 
       try {
         const canvas = await html2canvas(chart, {
-          scale: 2.0,
+          scale: 2.5,
           useCORS: true,
-          backgroundColor: '#f7f6fd',
+          backgroundColor: '#f5f2ff',
           logging: false
         });
 
@@ -328,10 +332,7 @@
         const fileName = `${currentName}_취향표.png`;
 
         canvas.toBlob((blob) => {
-          if (!blob) {
-            alert('이미지를 생성하지 못했습니다.');
-            return;
-          }
+          if (!blob) return;
           const blobUrl = URL.createObjectURL(blob);
           const link = document.createElement('a');
           link.href = blobUrl;
@@ -346,7 +347,9 @@
         console.error(err);
         alert('이미지 저장 중 오류가 발생했습니다.');
       } finally {
+        // 화면 상태 원래대로 복구
         deleteBtns.forEach(btn => btn.style.display = '');
+        emptyStates.forEach(el => el.style.visibility = 'visible');
         downloadBtn.disabled = false;
         btnText.textContent = '완성본 이미지 저장하기';
       }
